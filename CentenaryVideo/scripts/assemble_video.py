@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Offline Sync Video Pipeline:
+Offline Sync Video Pipeline (With Looped Music):
  1. Reads narration.json.
- 2. Generates Audio using OFFLINE TTS (pyttsx3) - No Internet Needed.
+ 2. Generates Audio using OFFLINE TTS (pyttsx3).
  3. Creates 1 Video Segment per ID.
- 4. Creates 1 Subtitle Block per ID.
- 5. Concatenates and Burns.
+ 4. Concatenates segments.
+ 5. Mixes Narration with Looped Background Music.
+ 6. Burns Subtitles.
 """
 
 import json
@@ -24,13 +25,14 @@ AUDIO_DIR = ROOT / "audio"
 NARRATION_JSON = ROOT / "narration.json"
 TMP = ROOT / "tmp_video_segments"
 OUT = ROOT / "final_video.mp4"
+MUSIC = AUDIO_DIR / "music.wav" # Expects music here
 
 FPS = 30
 WIDTH = 1280
 HEIGHT = 720
 CRF = 18
-FONT_SIZE = 16
-SUBTITLE_WIDTH = 60 
+FONT_SIZE = 12
+SUBTITLE_WIDTH = 90 
 
 def run(cmd):
     try:
@@ -56,11 +58,7 @@ def load_narration():
     return sorted(data, key=lambda x: int(x.get("id", 0)))
 
 def generate_missing_audio_offline(narration):
-    """
-    Generates audio files using pyttsx3 (Offline).
-    """
     AUDIO_DIR.mkdir(exist_ok=True)
-    
     try:
         import pyttsx3
     except ImportError:
@@ -68,10 +66,7 @@ def generate_missing_audio_offline(narration):
         sys.exit(1)
 
     print("Checking audio files (Offline Engine)...")
-    
-    # Initialize Engine
     engine = pyttsx3.init()
-    # You can adjust rate (speed) here. Default is usually around 200.
     engine.setProperty('rate', 200) 
     
     for item in narration:
@@ -83,20 +78,15 @@ def generate_missing_audio_offline(narration):
             continue
 
         print(f"Generating audio for ID {nid}...")
-        
-        # pyttsx3 saves directly to wav, no conversion needed!
-        # We must use absolute paths for pyttsx3 sometimes
         abs_path = str(wav_path.resolve())
-        
         engine.save_to_file(text, abs_path)
-        engine.runAndWait() # Block until done
+        engine.runAndWait()
 
 def get_audio_duration(path: Path):
     try:
         with contextlib.closing(wave.open(str(path), 'rb')) as w:
             return w.getnframes() / float(w.getframerate())
     except:
-        # fallback ffprobe
         cmd = ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", str(path)]
         return float(subprocess.check_output(cmd).decode().strip())
 
@@ -108,7 +98,6 @@ def create_video_segment(img_path, duration, output_path):
         f"fade=t=in:st=0:d={fade_d},"
         f"fade=t=out:st={duration-fade_d}:d={fade_d}"
     )
-    
     cmd = [
         "ffmpeg", "-y", "-loop", "1",
         "-i", str(img_path),
@@ -121,7 +110,6 @@ def create_video_segment(img_path, duration, output_path):
 
 def create_srt_file(narration, srt_path):
     current_time = 0.0
-    
     def fmt_time(t):
         h = int(t // 3600)
         m = int((t % 3600) // 60)
@@ -134,15 +122,33 @@ def create_srt_file(narration, srt_path):
             dur = item['real_duration']
             start = current_time
             end = current_time + dur - 0.1
-            
             wrapped_text = textwrap.fill(item['text'], width=SUBTITLE_WIDTH)
-            
             f.write(f"{i}\n")
             f.write(f"{fmt_time(start)} --> {fmt_time(end)}\n")
             f.write(f"{wrapped_text}\n\n")
-            
             current_time += dur
     return srt_path
+
+def mix_music_with_narration(narration_path, music_path, output_path):
+    """
+    Loops music infinitely and mixes with narration.
+    Stops exactly when narration ends.
+    """
+    print(f"Mixing background music: {music_path.name}...")
+    
+    cmd = [
+        "ffmpeg", "-y",
+        "-stream_loop", "-1", "-i", str(music_path),  # Input 0: Music (Looped)
+        "-i", str(narration_path),                    # Input 1: Narration
+        "-filter_complex",
+        # reduce music volume to 0.20, mix with narration
+        # duration=shortest: ends when the narration (shortest input) ends
+        "[0:a]volume=0.2[bg];[bg][1:a]amix=inputs=2:duration=shortest[aout]",
+        "-map", "[aout]",
+        "-c:a", "aac", "-b:a", "192k",
+        str(output_path)
+    ]
+    run(cmd)
 
 def main():
     ensure_ffmpeg()
@@ -156,7 +162,6 @@ def main():
         print("ERROR: No images in assets/ folder.")
         sys.exit(1)
         
-    # --- CHANGED: Use Offline Generator ---
     generate_missing_audio_offline(narration)
     
     segment_files = []
@@ -166,9 +171,8 @@ def main():
     for i, item in enumerate(narration):
         nid = item['id']
         wav_path = AUDIO_DIR / f"narration_{nid:02d}.wav"
-        
         if not wav_path.exists():
-            print(f"CRITICAL ERROR: Audio file {wav_path} was not generated.")
+            print(f"CRITICAL ERROR: Audio file {wav_path} missing.")
             sys.exit(1)
 
         duration = get_audio_duration(wav_path)
@@ -179,7 +183,6 @@ def main():
         
         print(f" ID {nid}: Audio={duration:.2f}s | Img={img_path.name}")
         create_video_segment(img_path, duration, seg_path)
-        
         segment_files.append(seg_path)
         audio_files.append(wav_path)
 
@@ -188,18 +191,25 @@ def main():
     with open(concat_list, "w") as f:
         for p in segment_files:
             f.write(f"file '{str(p).replace(chr(39), '')}'\n")
-            
     video_only = TMP / "video_only.mp4"
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_list), "-c", "copy", str(video_only)])
 
-    print("Concatenating audio...")
+    print("Concatenating narration audio...")
     audio_list = TMP / "audio_list.txt"
     with open(audio_list, "w") as f:
         for p in audio_files:
             f.write(f"file '{str(p).replace(chr(39), '')}'\n")
-            
-    audio_full = TMP / "audio_full.wav"
-    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(audio_list), "-c", "copy", str(audio_full)])
+    narration_only = TMP / "narration_only.wav"
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(audio_list), "-c", "copy", str(narration_only)])
+
+    # --- MUSIC MIXING LOGIC ---
+    final_audio_track = narration_only
+    if MUSIC.exists():
+        mixed_audio = TMP / "final_mixed_audio.aac"
+        mix_music_with_narration(narration_only, MUSIC, mixed_audio)
+        final_audio_track = mixed_audio
+    else:
+        print("No audio/music.wav found. Using narration only.")
 
     print("Generating subtitles...")
     srt_path = TMP / "subs.srt"
@@ -215,7 +225,7 @@ def main():
     cmd = [
         "ffmpeg", "-y",
         "-i", str(video_only),
-        "-i", str(audio_full),
+        "-i", str(final_audio_track),
         "-vf", f"subtitles='{srt_arg}':force_style='{style}'",
         "-c:v", "libx264", "-preset", "fast", "-crf", str(CRF),
         "-c:a", "aac", "-b:a", "192k",
