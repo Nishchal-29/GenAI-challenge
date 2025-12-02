@@ -1,17 +1,77 @@
 [
   {
     "id": 1,
-    "text": "In 1926, the institute was founded with a mission to advance mining and earth sciences education in India.",
-    "duration": 8
+    "text": "From its humble beginnings in the early 20th century, IIT (ISM) Dhanbad has forged an extraordinary legacy, transforming vision into impactful reality.",
+    "duration": 3
   },
   {
     "id": 2,
-    "text": "Over the following decades, the institute expanded into engineering, technology, and cutting-edge research.",
-    "duration": 10
+    "text": "Established in 1926, this esteemed institution has stood tall for nearly a century, steadily evolving through the millennium.",
+    "duration": 2
   },
   {
     "id": 3,
-    "text": "Today, the institute stands as a global hub for innovation, scientific progress, and collaboration.",
-    "duration": 10
+    "text": "What began as the Indian School of Mines has blossomed into a full-fledged Indian Institute of Technology, operating with 18 vibrant branches across Engineering, Applied Sciences, Management Studies, and Humanities, cementing its place as a prominent global institution.",
+    "duration": 5
+  },
+  {
+    "id": 4,
+    "text": "This transformation marks a new era, building upon a centenary of outperforming achievements in both academia and industry.",
+    "duration": 2
+  },
+  {
+    "id": 5,
+    "text": "Our campus is a hub of comprehensive learning, offering a diverse array of undergraduate, postgraduate, and PhD programs.",
+    "duration": 2
+  },
+  {
+    "id": 6,
+    "text": "We foster a rich environment for research, leading to groundbreaking contributions.",
+    "duration": 1
+  },
+  {
+    "id": 7,
+    "text": "From pioneering the nation's first Geoarchaeology course to a unique integrated BTech-MBA program with IIM Mumbai, our academic offerings reflect a commitment to forward-thinking education.",
+    "duration": 3
+  },
+  {
+    "id": 8,
+    "text": "Faculty members are not just educators but innovators, with individuals like Prof Sekhar Dutta becoming Fellows of the Institution of Civil Engineers, UK, and Prof Anshumali shaping climate change policy.",
+    "duration": 4
+  },
+  {
+    "id": 9,
+    "text": "Our researchers, like the team that conducted the first-ever multiple-layered blasting using smart design, are at the forefront of industrial innovation.",
+    "duration": 3
+  },
+  {
+    "id": 10,
+    "text": "IIT (ISM) Dhanbad shines on the global stage, proudly securing the 20th position worldwide in Engineering-Mineral and Mining in QS rankings, a significant leap and a testament to our specialized excellence.",
+    "duration": 4
+  },
+  {
+    "id": 11,
+    "text": "Our reach extends beyond the campus gates through vital community work, including skill development programs for local youth and leadership training for Panchayati Raj Functionaries.",
+    "duration": 3
+  },
+  {
+    "id": 12,
+    "text": "We embrace inclusivity, as demonstrated by the Uttar Pradesh government's support for Atul Kumar's IIT education following Supreme Court intervention, and our commitment to student well-being through initiatives like a fully operational campus creche.",
+    "duration": 4
+  },
+  {
+    "id": 13,
+    "text": "Our alumni, such as Ms Gargi Mishra, recognized among the top 100 inspiring women in mining globally, continue to make us proud.",
+    "duration": 3
+  },
+  {
+    "id": 14,
+    "text": "Even moments of campus joy, like the viral Diwali rocket video, add to the vibrant tapestry of student life.",
+    "duration": 2
+  },
+  {
+    "id": 15,
+    "text": "As we continue to drive India's critical mineral mission and innovate in fields from Arctic MedTech to Hydrogen Valley development, IIT (ISM) Dhanbad remains dedicated to shaping future leaders and contributing to a brighter tomorrow.",
+    "duration": 4
   }
 ]
