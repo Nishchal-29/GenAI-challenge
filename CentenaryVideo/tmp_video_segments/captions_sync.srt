@@ -1,105 +1,300 @@
 1
-00:00:00,000 --> 00:00:02,000
-From its humble beginnings in the early 20th
-century, IIT (ISM) Dhanbad has forged an
-extraordinary legacy, transforming vision into
-impactful reality.
+00:00:00,000 --> 00:00:00,636
+From its humble beginnings in the early
 
 2
-00:00:02,040 --> 00:00:04,040
-Established in 1926, this esteemed institution has
-stood tall for nearly a century, steadily evolving
-through the millennium.
+00:00:00,636 --> 00:00:01,181
+20th century, IIT (ISM) Dhanbad has
 
 3
-00:00:04,080 --> 00:00:06,080
-What began as the Indian School of Mines has
-blossomed into a full-fledged Indian Institute of
-Technology, operating with 18 vibrant branches
-across Engineering, Applied Sciences, Management
-Studies, and Humanities, cementing its place as a
-prominent global institution.
+00:00:01,181 --> 00:00:01,545
+forged an extraordinary legacy,
 
 4
-00:00:06,120 --> 00:00:08,120
-This transformation marks a new era, building upon
-a centenary of outperforming achievements in both
-academia and industry.
+00:00:01,545 --> 00:00:01,909
+transforming vision into impactful
 
 5
-00:00:08,160 --> 00:00:10,160
-Our campus is a hub of comprehensive learning,
-offering a diverse array of undergraduate,
-postgraduate, and PhD programs.
+00:00:01,909 --> 00:00:02,159
+reality.
 
 6
-00:00:10,199 --> 00:00:12,199
-We foster a rich environment for research, leading
-to groundbreaking contributions.
+00:00:02,040 --> 00:00:02,595
+Established in 1926, this esteemed
 
 7
-00:00:12,239 --> 00:00:14,239
-From pioneering the nation's first Geoarchaeology
-course to a unique integrated BTech-MBA program
-with IIM Mumbai, our academic offerings reflect a
-commitment to forward-thinking education.
+00:00:02,595 --> 00:00:03,373
+institution has stood tall for nearly a
 
 8
-00:00:14,279 --> 00:00:16,279
-Faculty members are not just educators but
-innovators, with individuals like Prof Sekhar
-Dutta becoming Fellows of the Institution of Civil
-Engineers, UK, and Prof Anshumali shaping climate
-change policy.
+00:00:03,373 --> 00:00:03,928
+century, steadily evolving through the
 
 9
-00:00:16,319 --> 00:00:18,319
-Our researchers, like the team that conducted the
-first-ever multiple-layered blasting using smart
-design, are at the forefront of industrial
-innovation.
+00:00:03,928 --> 00:00:04,178
+millennium.
 
 10
-00:00:18,359 --> 00:00:20,359
-IIT (ISM) Dhanbad shines on the global stage,
-proudly securing the 20th position worldwide in
-Engineering-Mineral and Mining in QS rankings, a
-significant leap and a testament to our
-specialized excellence.
+00:00:04,080 --> 00:00:04,501
+What began as the Indian School of Mines
 
 11
-00:00:20,399 --> 00:00:22,399
-Our reach extends beyond the campus gates through
-vital community work, including skill development
-programs for local youth and leadership training
-for Panchayati Raj Functionaries.
+00:00:04,501 --> 00:00:04,816
+has blossomed into a full-fledged Indian
 
 12
-00:00:22,439 --> 00:00:24,439
-We embrace inclusivity, as demonstrated by the
-Uttar Pradesh government's support for Atul
-Kumar's IIT education following Supreme Court
-intervention, and our commitment to student well-
-being through initiatives like a fully operational
-campus creche.
+00:00:04,816 --> 00:00:05,080
+Institute of Technology, operating with
 
 13
-00:00:24,479 --> 00:00:26,479
-Our alumni, such as Ms Gargi Mishra, recognized
-among the top 100 inspiring women in mining
-globally, continue to make us proud.
+00:00:05,080 --> 00:00:05,343
+18 vibrant branches across Engineering,
 
 14
-00:00:26,519 --> 00:00:28,519
-Even moments of campus joy, like the viral Diwali
-rocket video, add to the vibrant tapestry of
-student life.
+00:00:05,343 --> 00:00:05,593
+Applied Sciences, Management Studies,
 
 15
-00:00:28,559 --> 00:00:30,559
-As we continue to drive India's critical mineral
-mission and innovate in fields from Arctic MedTech
-to Hydrogen Valley development, IIT (ISM) Dhanbad
-remains dedicated to shaping future leaders and
+00:00:05,593 --> 00:00:05,961
+and Humanities, cementing its place as a
+
+16
+00:00:05,961 --> 00:00:06,211
+prominent global institution.
+
+17
+00:00:06,120 --> 00:00:06,786
+This transformation marks a new era,
+
+18
+00:00:06,786 --> 00:00:07,342
+building upon a centenary of
+
+19
+00:00:07,342 --> 00:00:07,786
+outperforming achievements in both
+
+20
+00:00:07,786 --> 00:00:08,120
+academia and industry.
+
+21
+00:00:08,160 --> 00:00:08,937
+Our campus is a hub of comprehensive
+
+22
+00:00:08,937 --> 00:00:09,604
+learning, offering a diverse array of
+
+23
+00:00:09,604 --> 00:00:10,048
+undergraduate, postgraduate, and PhD
+
+24
+00:00:10,048 --> 00:00:10,298
+programs.
+
+25
+00:00:10,199 --> 00:00:11,290
+We foster a rich environment for
+
+26
+00:00:11,290 --> 00:00:12,018
+research, leading to groundbreaking
+
+27
+00:00:12,018 --> 00:00:12,268
+contributions.
+
+28
+00:00:12,239 --> 00:00:12,639
+From pioneering the nation's first
+
+29
+00:00:12,639 --> 00:00:13,039
+Geoarchaeology course to a unique
+
+30
+00:00:13,039 --> 00:00:13,439
+integrated BTech-MBA program with IIM
+
+31
+00:00:13,439 --> 00:00:13,919
+Mumbai, our academic offerings reflect a
+
+32
+00:00:13,919 --> 00:00:14,169
+commitment to forward-thinking
+
+33
+00:00:14,169 --> 00:00:14,419
+education.
+
+34
+00:00:14,279 --> 00:00:14,679
+Faculty members are not just educators
+
+35
+00:00:14,679 --> 00:00:15,013
+but innovators, with individuals like
+
+36
+00:00:15,013 --> 00:00:15,413
+Prof Sekhar Dutta becoming Fellows of
+
+37
+00:00:15,413 --> 00:00:15,813
+the Institution of Civil Engineers, UK,
+
+38
+00:00:15,813 --> 00:00:16,146
+and Prof Anshumali shaping climate
+
+39
+00:00:16,146 --> 00:00:16,396
+change policy.
+
+40
+00:00:16,319 --> 00:00:16,891
+Our researchers, like the team that
+
+41
+00:00:16,891 --> 00:00:17,177
+conducted the first-ever
+
+42
+00:00:17,177 --> 00:00:17,558
+multiple-layered blasting using smart
+
+43
+00:00:17,558 --> 00:00:18,129
+design, are at the forefront of
+
+44
+00:00:18,129 --> 00:00:18,379
+industrial innovation.
+
+45
+00:00:18,359 --> 00:00:18,811
+IIT (ISM) Dhanbad shines on the global
+
+46
+00:00:18,811 --> 00:00:19,134
+stage, proudly securing the 20th
+
+47
+00:00:19,134 --> 00:00:19,384
+position worldwide in
+
+48
+00:00:19,384 --> 00:00:19,706
+Engineering-Mineral and Mining in QS
+
+49
+00:00:19,706 --> 00:00:20,093
+rankings, a significant leap and a
+
+50
+00:00:20,093 --> 00:00:20,416
+testament to our specialized excellence.
+
+51
+00:00:20,399 --> 00:00:20,879
+Our reach extends beyond the campus
+
+52
+00:00:20,879 --> 00:00:21,279
+gates through vital community work,
+
+53
+00:00:21,279 --> 00:00:21,679
+including skill development programs for
+
+54
+00:00:21,679 --> 00:00:22,159
+local youth and leadership training for
+
+55
+00:00:22,159 --> 00:00:22,409
+Panchayati Raj Functionaries.
+
+56
+00:00:22,439 --> 00:00:22,734
+We embrace inclusivity, as demonstrated
+
+57
+00:00:22,734 --> 00:00:23,028
+by the Uttar Pradesh government's
+
+58
+00:00:23,028 --> 00:00:23,381
+support for Atul Kumar's IIT education
+
+59
+00:00:23,381 --> 00:00:23,631
+following Supreme Court intervention,
+
+60
+00:00:23,631 --> 00:00:23,984
+and our commitment to student well-being
+
+61
+00:00:23,984 --> 00:00:24,278
+through initiatives like a fully
+
+62
+00:00:24,278 --> 00:00:24,528
+operational campus creche.
+
+63
+00:00:24,479 --> 00:00:25,116
+Our alumni, such as Ms Gargi Mishra,
+
+64
+00:00:25,116 --> 00:00:25,661
+recognized among the top 100 inspiring
+
+65
+00:00:25,661 --> 00:00:26,207
+women in mining globally, continue to
+
+66
+00:00:26,207 --> 00:00:26,479
+make us proud.
+
+67
+00:00:26,519 --> 00:00:27,256
+Even moments of campus joy, like the
+
+68
+00:00:27,256 --> 00:00:27,993
+viral Diwali rocket video, add to the
+
+69
+00:00:27,993 --> 00:00:28,519
+vibrant tapestry of student life.
+
+70
+00:00:28,559 --> 00:00:28,959
+As we continue to drive India's critical
+
+71
+00:00:28,959 --> 00:00:29,302
+mineral mission and innovate in fields
+
+72
+00:00:29,302 --> 00:00:29,645
+from Arctic MedTech to Hydrogen Valley
+
+73
+00:00:29,645 --> 00:00:29,931
+development, IIT (ISM) Dhanbad remains
+
+74
+00:00:29,931 --> 00:00:30,274
+dedicated to shaping future leaders and
+
+75
+00:00:30,274 --> 00:00:30,559
 contributing to a brighter tomorrow.
 
